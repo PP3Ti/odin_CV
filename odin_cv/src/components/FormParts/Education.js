@@ -1,18 +1,5 @@
-import { v4 as uuidv4 } from 'uuid'
-import { useState } from "react"
+export default function Education({ educationInitialState, educationItems, setEducationItems, educationFormData, setEducationFormData}) {
 
-export default function Education() {
-
-  const initialState = {
-    institution: '', 
-    degree: '',
-    subject: '',
-    from: '',
-    to: '',
-    id: uuidv4()
-  }
-  const [educationItems, setEducationItems] = useState([])
-  const [educationFormData, setEducationFormData] = useState(initialState)
   function handleChange(e) {
     const { name, value } = e.target
     setEducationFormData(data => ({...data, [name]: value}))
@@ -21,7 +8,7 @@ export default function Education() {
   function handleAddClick(e) {
     e.preventDefault()
     setEducationItems(educationItems => [...educationItems, educationFormData])
-    setEducationFormData(data => ({...data, ...initialState}))
+    setEducationFormData(data => ({...data, ...educationInitialState}))
   }
 
   const handleEdit = (id) => (e) => {
@@ -42,8 +29,8 @@ export default function Education() {
   const handleDeleteClick = (id) => (e) => {
     e.preventDefault()
     setEducationItems(items =>
-    items.filter((item) => item.id !== id)
-  )
+      items.filter((item) => item.id !== id)
+    )
   }
   
   return (
@@ -70,13 +57,13 @@ export default function Education() {
                     value={item.subject}
                     onChange={handleEdit(item.id)}
             />
-            <input  type="month"
+            <input  type="text"
                     name="from"
                     placeholder="From"
                     value={item.from}
                     onChange={handleEdit(item.id)}
             />
-            <input  type="month"
+            <input  type="text"
                     name="to"
                     placeholder="To"
                     value={item.to}
@@ -104,13 +91,13 @@ export default function Education() {
               value={educationFormData.subject}
               onChange={handleChange}
       />
-      <input  type="month"
+      <input  type="text"
               name="from"
               placeholder="From"
               value={educationFormData.from}
               onChange={handleChange}
       />
-      <input  type="month"
+      <input  type="text"
               name="to"
               placeholder="To"
               value={educationFormData.to}

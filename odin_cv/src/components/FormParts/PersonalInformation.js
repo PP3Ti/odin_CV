@@ -1,9 +1,4 @@
-import { useState } from "react"
-
-export default function PersonalInformation() {
-
-  const [personalFormData, setPersonalFormData] = useState({firstName: '', lastName: '', title: '', 
-                                                            address: '', phoneNumber: '', email: ''})
+export default function PersonalInformation({ personalFormData, setPersonalFormData }) {
 
   function handleChange(e) {
     const { name, value } = e.target
@@ -49,6 +44,20 @@ export default function PersonalInformation() {
               value={personalFormData.email}
               onChange={handleChange}
       />
+      <input  type="text" 
+              name="github"
+              placeholder="GitHub / LinkedIn"
+              value={personalFormData.github}
+              onChange={handleChange}
+      />
+      <textarea  
+              name="description"
+              placeholder="Description"
+              value={personalFormData.description}
+              onChange={handleChange}
+              className="description"
+              rows={5}
+      ></textarea>
     </fieldset>
   )
 }
