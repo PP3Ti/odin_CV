@@ -1,53 +1,17 @@
-import { useState } from "react"
-import { v4 as uuidv4 } from 'uuid'
-
 import PersonalInformation from "./FormParts/PersonalInformation"
 import Education from "./FormParts/Education"
 import Experience from "./FormParts/Experience"
 import Skills from "./FormParts/Skills"
 import DocumentControl from "./DocumentControl"
 
-export default function Form() {
-
-  const personalInitialState = {
-    firstName: '', 
-    lastName: '', 
-    title: '', 
-    address: '', 
-    phoneNumber: '', 
-    email: '',
-    github: '', 
-    description: ''
-  }
-  const [personalFormData, setPersonalFormData] = useState(personalInitialState)
-
-  const experienceInitialState = {
-    position: '', 
-    company: '',
-    from: '',
-    to: '', 
-    description: '', 
-    id: uuidv4()
-  }                                       
-  const [experienceItems, setExperienceItems] = useState([])
-  const [experinceFormData, setExperienceFormData] = useState(experienceInitialState)
-
-  const educationInitialState = {
-    institution: '', 
-    degree: '',
-    subject: '',
-    from: '',
-    to: '',
-    id: uuidv4()
-  }
-  const [educationItems, setEducationItems] = useState([])
-  const [educationFormData, setEducationFormData] = useState(educationInitialState)
-
-  const skillsInitialState = {skill: '', id: uuidv4()}
-  const [skillsItems, setSkillsItems] = useState([])
-  const [skillsFormData, setSkillsFormData] = useState(skillsInitialState)
-
-                                
+export default function Form({  personalInitialState, personalFormData, setPersonalFormData, 
+                                experienceInitialState, experienceItems, setExperienceItems, 
+                                experinceFormData, setExperienceFormData, educationInitialState, 
+                                educationItems, setEducationItems, educationFormData,
+                                setEducationFormData, skillsInitialState, skillsItems, 
+                                setSkillsItems, skillsFormData, setSkillsFormData
+                        }) {
+                  
   return (
     <form>
       <PersonalInformation  personalFormData={personalFormData} 
