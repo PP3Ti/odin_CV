@@ -2,14 +2,14 @@ import PersonalInformation from "./FormParts/PersonalInformation"
 import Education from "./FormParts/Education"
 import Experience from "./FormParts/Experience"
 import Skills from "./FormParts/Skills"
-import DocumentControl from "./DocumentControl"
+import DocumentControl from "./FormParts/DocumentControl"
 
 export default function Form({  personalInitialState, personalFormData, setPersonalFormData, 
                                 experienceInitialState, experienceItems, setExperienceItems, 
                                 experinceFormData, setExperienceFormData, educationInitialState, 
                                 educationItems, setEducationItems, educationFormData,
                                 setEducationFormData, skillsInitialState, skillsItems, 
-                                setSkillsItems, skillsFormData, setSkillsFormData
+                                setSkillsItems, skillsFormData, setSkillsFormData, exportPdf
                         }) {
                   
   return (
@@ -49,6 +49,8 @@ export default function Form({  personalInitialState, personalFormData, setPerso
                         skillsInitialState={skillsInitialState}
                         setSkillsItems={setSkillsItems}
                         setSkillsFormData={setSkillsFormData}
+
+                        exportPdf={exportPdf}
       />
     </form>
   )

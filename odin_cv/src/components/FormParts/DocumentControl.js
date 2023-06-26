@@ -1,6 +1,6 @@
 export default function DocumentControl({ personalInitialState, setPersonalFormData,  experienceInitialState, setExperienceItems,
                                           setExperienceFormData, educationInitialState, setEducationItems,
-                                          setEducationFormData, skillsInitialState, setSkillsItems, setSkillsFormData }) {
+                                          setEducationFormData, skillsInitialState, setSkillsItems, setSkillsFormData, exportPdf }) {
 
   const handleResetClick = (e) => {
     e.preventDefault()
@@ -19,7 +19,9 @@ export default function DocumentControl({ personalInitialState, setPersonalFormD
 
   const handleExportClick = (e) => {
     e.preventDefault()
+    exportPdf()
   }
+
 
   return  (
     <fieldset className="document-control-buttons">

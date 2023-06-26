@@ -1,5 +1,4 @@
-// eslint-disable-next-line
-import styles from './styles.sass'
+import './styles.sass'
 import Header from './Header'
 import Main from './Main'
 import Footer from './Footer'
