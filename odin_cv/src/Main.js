@@ -55,7 +55,7 @@ export default function Main() {
         const pdf = new jsPDF()
         const width = pdf.internal.pageSize.getWidth()
         const height = pdf.internal.pageSize.getHeight()
-        pdf.addImage(img, 'PNG', 0, 0, width, height)
+        pdf.addImage(img, 'PNG', 0, 0, width, height, undefined, 'FAST')
         pdf.save('cv.pdf')
       })
   }
