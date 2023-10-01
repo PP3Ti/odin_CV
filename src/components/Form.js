@@ -3,17 +3,23 @@ import Education from "./FormParts/Education"
 import Experience from "./FormParts/Experience"
 import Skills from "./FormParts/Skills"
 import DocumentControl from "./FormParts/DocumentControl"
+import LanguageSwitch from "./FormParts/LanguageSwitch"
 
 export default function Form({  personalInitialState, personalFormData, setPersonalFormData, 
                                 experienceInitialState, experienceItems, setExperienceItems, 
                                 experinceFormData, setExperienceFormData, educationInitialState, 
                                 educationItems, setEducationItems, educationFormData,
                                 setEducationFormData, skillsInitialState, skillsItems, 
-                                setSkillsItems, skillsFormData, setSkillsFormData, exportPdf
+                                setSkillsItems, skillsFormData, setSkillsFormData, exportPdf,
+                                language, setLanguage, toggleLanguage
                         }) {
                   
   return (
     <form>
+      <LanguageSwitch language={language}
+                      setLanguage={setLanguage}
+                      toggleLanguage={toggleLanguage}
+      />
       <PersonalInformation  personalFormData={personalFormData} 
                             setPersonalFormData={setPersonalFormData}
       />

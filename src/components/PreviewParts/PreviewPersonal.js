@@ -3,7 +3,7 @@ import phone from '../../assets/phone.svg'
 import email from '../../assets/email.svg'
 import gh from '../../assets/gh.svg'
 
-export default function PreviewPersonal({ personalFormData }) {
+export default function PreviewPersonal({ personalFormData, language }) {
   return (
     <div className="preview-personal">
       <div className="introduction">
@@ -16,7 +16,7 @@ export default function PreviewPersonal({ personalFormData }) {
       </div>
       <div className="personal-container">
         <div className="personal-info">
-          <p className="secondary-header">Contacts</p>
+          <p className="secondary-header">{language === 'en' ? 'Contacts' : 'Elérhetőségek'}</p>
           <ul>
             <li>
               <img src={house} alt='icon of a house' style={{width:'14px', marginRight:'7px'}}></img> 
@@ -37,7 +37,7 @@ export default function PreviewPersonal({ personalFormData }) {
           </ul>
         </div>
         <div className="personal-description">
-          <p className="secondary-header">Description</p>
+          <p className="secondary-header">{language === 'en' ? 'Description' : 'Bemutatkozás'}</p>
           <textarea  value={personalFormData.description} readOnly={true}>
           </textarea>
         </div>

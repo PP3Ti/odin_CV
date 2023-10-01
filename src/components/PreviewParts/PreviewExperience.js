@@ -8,7 +8,7 @@ export default function PreviewExperience({ experienceItems }) {
             <span className="thin" style={{fontSize:'0.9rem', alignSelf:'flex-end'}}>{item.from}{'  -  '}{item.to}</span>
           </p>
           <p style={{fontWeight:'600', marginBottom:'5px'}}>{item.company}</p>
-          <textarea  value={item.description} readOnly={true} style={{height:'70px'}}>
+          <textarea  value={item.description} readOnly={true} style={{minHeight:'100px'}}>
           </textarea>
         </div>
       )}

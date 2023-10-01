@@ -60,6 +60,13 @@ export default function Main() {
       })
   }
 
+  const [language, setLanguage] = useState('en')
+
+  const toggleLanguage = (e) => {
+    e.preventDefault()
+    setLanguage((prevLanguage) => (prevLanguage === 'en' ? 'hu' : 'en'))
+  }
+
   return (
     <div className='main'>
       <Form personalInitialState={personalInitialState}
@@ -85,12 +92,20 @@ export default function Main() {
             setSkillsFormData={setSkillsFormData}
 
             exportPdf={exportPdf}
+
+            language={language}
+            setLanguage={setLanguage}
+            toggleLanguage={toggleLanguage}
       />
       <Preview  personalFormData={personalFormData}
                 experienceItems={experienceItems} 
                 educationItems={educationItems}
                 skillsItems={skillsItems}
                 ref={previewRef}
+                
+                language={language}
+                setLanguage={setLanguage}
+                toggleLanguage={toggleLanguage}
       />
     </div>
   )
